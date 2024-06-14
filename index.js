@@ -36,15 +36,6 @@ const questions = [
         ]
     },
     {
-        question: "Who wrote 'To Kill a Mockingbird'?",
-        answers: [
-            { text: "Harper Lee", correct: true },
-            { text: "Mark Twain", correct: false },
-            { text: "Ernest Hemingway", correct: false },
-            { text: "F. Scott Fitzgerald", correct: false }
-        ]
-    },
-    {
         question: "What is the smallest prime number?",
         answers: [
             { text: "1", correct: false },
@@ -155,11 +146,13 @@ function selectAnswer(e){
 
 
 }
+
 function showScore(){
     resetState();
     questionElement.innerHTML=`Your Score ${score} out of ${questions.length} !`
-    handleNextButton.innerHTML="PlayAgain";
+    nextBtn.innerHTML="Play Again";
     nextBtn.style.display="block";
+    
 
 }
 function handleNextButton(){
@@ -175,6 +168,9 @@ function handleNextButton(){
 nextBtn.addEventListener('click',()=>{
     if(currentQuestionIndex < questions.length){
         handleNextButton();
+    }
+    else {
+        startQuiz(); 
     }
 })
 startQuiz();
