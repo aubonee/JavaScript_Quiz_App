@@ -44,10 +44,14 @@ hr{
     margin:10px 0px;
     border:1px solid black;
     border-radius:5px;
+    cursor: pointer;
 }
-.btn:hover{
+.btn:hover:not([disabled]){
     background-color: black;
     color: white;
+}
+.btn:disabled{
+    cursor:no-drop
 }
 #next-btn{
     padding: 10px 20px;
@@ -58,4 +62,12 @@ hr{
      color: white;
      font-weight: bold;
      display: none;
+}
+.correct{
+    background-color: rgb(124, 170, 106);
+    color:rgb(0, 86, 0);
+}
+.incorrect{
+    background-color: rgb(234, 159, 159);
+    color: rgb(123, 13, 13);
 }
